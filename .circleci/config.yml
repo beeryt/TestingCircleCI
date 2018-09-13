@@ -11,3 +11,9 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
+      - run:
+          name: Build
+          command: gcc main.c
+      - run:
+          name: Run
+          command: ./a.out
