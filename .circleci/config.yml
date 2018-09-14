@@ -6,11 +6,27 @@ jobs:
     steps:
       - checkout
       - run:
-          name: List of Images
-          command: docker images
+        name: qmake
+        command: echo "Run qmake here"
+  test:
+    docker:
+      - image: rabits/qt:5.9-desktop
+    steps:
+      - checkout
       - run:
-          name: Build
-          command: gcc main.c
+        name: Begin Test
+        command: date
       - run:
-          name: Run
-          command: ./a.out
+        name: End Test
+        command: date
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+        requires:
+          - build
+        filters:
+          branches:
+            only: master
