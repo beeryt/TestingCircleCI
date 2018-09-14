@@ -19,10 +19,6 @@ jobs:
               qmake TestingCircleCI.pro
               make
               ls -lah
-              
-      - run:
-          name: view depa
-          command: ldd libqxcb.so
 
       - run:
           name: test
