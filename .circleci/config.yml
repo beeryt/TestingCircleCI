@@ -2,12 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: gcc:7
+      - image: rabits/qt:5.9-desktop
     steps:
       - checkout
       - run:
-          name: Print the Current Time
-          command: date
+          name: List of Images
+          command: docker images
       - run:
           name: Build
           command: gcc main.c
