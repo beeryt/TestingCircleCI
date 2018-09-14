@@ -10,7 +10,7 @@ void MyFirstTest::myFirstTest()
 
 void MyFirstTest::mySecondTest()
 {
-    QVERIFY(1==1);
+    QVERIFY(1==0);
 }
 
 void MyFirstTest::cleanupTestCase()
