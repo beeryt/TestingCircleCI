@@ -3,30 +3,20 @@ jobs:
   build:
     docker:
       - image: rabits/qt:5.9-desktop
+
+    working_directory: ~/repo
+
     steps:
       - checkout
+
       - run:
-        name: qmake
-        command: echo "Run qmake here"
-  test:
-    docker:
-      - image: rabits/qt:5.9-desktop
-    steps:
-      - checkout
+          name: install dependencies
+          command: echo
+
       - run:
-        name: Begin Test
-        command: date
+          name: build
+          command: echo
+
       - run:
-        name: End Test
-        command: date
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test:
-        requires:
-          - build
-        filters:
-          branches:
-            only: master
+          name: test
+          command: echo
