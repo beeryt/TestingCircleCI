@@ -17,3 +17,8 @@ void MyFirstTest::cleanupTestCase()
 {
     qDebug("called after myFirstTest and mySecondTest");
 }
+
+
+
+QTEST_MAIN(MyFirstTest)
+#include "MyFirstTest.moc"
