@@ -1,4 +1,5 @@
 QT += quick qml core testlib
+Qt -= gui
 CONFIG += c++11 testcase
 
 # The following define makes your compiler emit warnings if you use
