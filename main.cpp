@@ -69,7 +69,7 @@ void TestQString::toUpper()
 
 void TestQString::willFail()
 {
-    QCOMPARE("apple", "apple");
+    QCOMPARE("apple", "banana");
 }
 //! [1]
 
