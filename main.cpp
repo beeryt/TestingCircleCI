@@ -69,6 +69,7 @@ void TestQString::toUpper()
 
 void TestQString::willFail()
 {
+    QEXPECT_FAIL("", "This text expects to fail", Continue);
     QCOMPARE("apple", "banana");
 }
 //! [1]
