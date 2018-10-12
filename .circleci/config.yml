@@ -26,4 +26,4 @@ jobs:
 
       - run:
           name: test
-          command: ./TestingCircleCI -platform offscreen
+          command: ./TestingCircleCI
