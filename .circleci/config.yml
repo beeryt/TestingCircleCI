@@ -11,11 +11,11 @@ jobs:
 
       - run:
           name: gcc version
-          command: gcc --version
+          command: arm-linux-gnueabihf-gcc --version
 
       - run:
           name: g++ version
-          command: g++ --version
+          command: arm-linux-gnueabihf-g++ --version
 
       - run:
           name: cmake version
