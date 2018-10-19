@@ -2,7 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: purplekarrot/arm-linux-gnueabihf
+      # - image: purplekarrot/arm-linux-gnueabihf
+      - image: rikorose/gcc-cmake:latest
 
     working_directory: ~/repo
 
@@ -15,11 +16,11 @@ jobs:
 
       - run:
           name: gcc version
-          command: arm-linux-gnueabihf-gcc --version
+          command: gcc --version
 
       - run:
           name: g++ version
-          command: arm-linux-gnueabihf-g++ --version
+          command: g++ --version
 
       - run:
           name: cmake version
