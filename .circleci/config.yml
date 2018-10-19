@@ -18,21 +18,10 @@ jobs:
           command: g++ --version
 
       - run:
-          name: g++ version
-          command: g++ --version
+          name: cmake version
+          command: cmake --version
 
       - run:
-          name: Build C
-          command: gcc main.c -o C
+          name: Run CMake
+          command: mkdir build && cd build && cmake ..
 
-      - run:
-          name: Build C++
-          command: g++ main.cpp -o C++
-
-      - run:
-          name: Test C
-          command: ./C
-
-      - run:
-          name: Test C++
-          command: ./C++
