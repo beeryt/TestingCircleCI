@@ -1,3 +1,5 @@
 cmake_minimum_required (VERSION 3.0)
+SET(CMAKE_C_COMPILER   arm-linux-gnueabihf-gcc)
+SET(CMAKE_CXX_COMPILER arm-linux-gnueabihf-g++)
 project(TestingCircleCI)
 add_executable(C main.c)
