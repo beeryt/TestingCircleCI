@@ -25,3 +25,14 @@ jobs:
           name: Run CMake
           command: mkdir build && cd build && cmake ..
 
+      - run:
+          name: Build
+          command: cd build && make
+
+      - run:
+          name: Test C
+          command: ./C
+
+      - run:
+          name: Test C++
+          command: ./C++
