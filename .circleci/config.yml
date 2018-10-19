@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: rabits/qt:5.11-desktop
+      - image: gcc:7
 
     working_directory: ~/repo
 
@@ -10,20 +10,29 @@ jobs:
       - checkout
 
       - run:
-          name: install dependencies
-          command: echo
+          name: gcc version
+          command: gcc --version
 
       - run:
-          name: build
-          command: |
-              qmake TestingCircleCI.pro
-              make
-              ls -lah
-              
-      - run:
-          name: check dependencies
-          command: ldd ./TestingCircleCI
+          name: g++ version
+          command: g++ --version
 
       - run:
-          name: test
-          command: ./TestingCircleCI
+          name: g++ version
+          command: g++ --version
+
+      - run:
+          name: Build C
+          command: gcc main.c -o C
+
+      - run:
+          name: Build C++
+          command: g++ main.cpp -o C++
+
+      - run:
+          name: Test C
+          command: ./C
+
+      - run:
+          name: Test C++
+          command: ./C++
