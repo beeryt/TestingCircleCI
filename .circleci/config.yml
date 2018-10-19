@@ -10,6 +10,10 @@ jobs:
       - checkout
 
       - run:
+          name: Install dependencies
+          command: apt-get update && apt-get install -y file
+
+      - run:
           name: gcc version
           command: arm-linux-gnueabihf-gcc --version
 
@@ -28,7 +32,3 @@ jobs:
       - run:
           name: Build
           command: cd build && make && file C
-
-      - run:
-          name: Test C
-          command: build/C
