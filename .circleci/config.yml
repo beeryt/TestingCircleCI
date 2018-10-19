@@ -31,8 +31,8 @@ jobs:
 
       - run:
           name: Test C
-          command: ./C
+          command: build/C
 
       - run:
           name: Test C++
-          command: ./C++
+          command: build/C++
