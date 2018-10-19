@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: purplekarrot/arm-linux-gnueabihf
+      - image: gregorymaertens/docker-arm-linux-gnueabihf
 
     working_directory: ~/repo
 
