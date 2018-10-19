@@ -31,5 +31,9 @@ jobs:
           command: mkdir build && cd build && cmake .. && make help
 
       - run:
-          name: Build
-          command: cd build && make && file C*
+          name: Build C
+          command: cd build && make C && file C
+
+      - run:
+          name: Build C++
+          command: cd build && make C++ && file C++
