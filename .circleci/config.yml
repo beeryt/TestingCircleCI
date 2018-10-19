@@ -28,8 +28,8 @@ jobs:
 
       - run:
           name: Run CMake
-          command: mkdir build && cd build && cmake ..
+          command: mkdir build && cd build && cmake .. && make help
 
       - run:
           name: Build
-          command: cd build && make && file C
+          command: cd build && make && file C*
