@@ -27,12 +27,8 @@ jobs:
 
       - run:
           name: Build
-          command: cd build && make
+          command: cd build && make && file C
 
       - run:
           name: Test C
           command: build/C
-
-      - run:
-          name: Test C++
-          command: build/C++
