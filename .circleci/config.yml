@@ -37,3 +37,11 @@ jobs:
       - run:
           name: Build C++
           command: cd build && make C++ && file C++
+
+      - store_artifacts:
+          path: ~/repo/build/C
+          destination: C
+
+      - store_artifacts:
+          path: ~/repo/build/C++
+          destination: C++
