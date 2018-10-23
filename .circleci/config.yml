@@ -27,20 +27,14 @@ jobs:
           command: ${CXX} --version
 
       - run:
-          name: cmake version
-          command: cmake --version
-
-      - run:
           name: Run CMake
+          command: cmake --version
           command: mkdir build && cd build && cmake .. && make help
 
       - run:
           name: Build C
-          command: cd build && make C.elf && file C.elf
-
-      - run:
-          name: Build C++
-          command: cd build && make C++.elf && file C++.elf
+          command: cd build && make C.elf && file C.elf && cd ~/repo
+          command: cd build && make C++.elf && file C++.elf  && cd ~/repo
 
       - store_artifacts:
           path: build/*.elf
