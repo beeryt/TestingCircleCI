@@ -36,11 +36,11 @@ jobs:
 
       - run:
           name: Build C
-          command: cd build && make C.elf && file C.elf
+          command: cd build && make C && file C.elf
 
       - run:
           name: Build C++
-          command: cd build && make C++.elf && file C++.elf
+          command: cd build && make C++ && file C++.elf
 
       - store_artifacts:
           path: ~/repo/build/C.elf
