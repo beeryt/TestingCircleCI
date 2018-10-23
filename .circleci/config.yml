@@ -7,6 +7,10 @@ jobs:
 
     working_directory: ~/repo
 
+    environment:
+      CC: arm-linux-gnueabihf-gcc
+      CXX: arm-linux-gnueabihf-g++
+
     steps:
       - checkout
 
@@ -16,11 +20,11 @@ jobs:
 
       - run:
           name: gcc version
-          command: gcc --version
+          command: ${CC} --version
 
       - run:
           name: g++ version
-          command: g++ --version
+          command: ${CXX} --version
 
       - run:
           name: cmake version
