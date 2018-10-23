@@ -2,8 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      # - image: purplekarrot/arm-linux-gnueabihf
-      - image: rikorose/gcc-cmake:latest
+      - image: purplekarrot/arm-linux-gnueabihf
+      # - image: rikorose/gcc-cmake:latest
 
     working_directory: ~/repo
 
