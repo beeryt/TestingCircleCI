@@ -44,6 +44,8 @@ jobs:
 
       - store_artifacts:
           path: ~/repo/build/C.elf
+          destination: C.elf
 
       - store_artifacts:
           path: ~/repo/build/C++.elf
+          destination: C++.elf
