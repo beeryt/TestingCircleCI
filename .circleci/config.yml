@@ -43,7 +43,4 @@ jobs:
           command: cd build && make C++.elf && file C++.elf
 
       - store_artifacts:
-          path: ~/repo/build/C.elf
-
-      - store_artifacts:
-          path: ~/repo/build/C++.elf
+          path: build/*.elf
