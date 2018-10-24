@@ -28,4 +28,4 @@ jobs:
           command: cd openwrt && make -j"$(nproc)" download
       - run:
           name: Build
-          command: cd openwrt && make -j"$(nproc)"
+          command: cd openwrt && make -j1 V=s
