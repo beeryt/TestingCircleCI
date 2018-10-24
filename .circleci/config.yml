@@ -13,7 +13,7 @@ jobs:
           command: apt-get update && apt-get install -y subversion g++ zlib1g-dev build-essential git python rsync man-db libncurses5-dev gawk gettext unzip file libssl-dev wget zip time
       - run:
           name: Checkout Files
-          command: git clone https://git.openwrt.org/openwrt/openwrt.git/ && git checkout v18.06.1
+          command: git clone https://git.openwrt.org/openwrt/openwrt.git/ && cd openwrt && git checkout v18.06.1
       - run:
           name: Update script
           command: cd openwrt && ./scripts/feeds update -a
