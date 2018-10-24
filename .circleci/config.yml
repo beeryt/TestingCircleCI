@@ -22,7 +22,7 @@ jobs:
           command: cd openwrt && ./scripts/feeds install -a
       - run:
           name: Make Configuration
-          command: cd openwrt && make menuconfig
+          command: cp diffconfig openwrt/.config && cd openwrt && make defconfig
       - run:
           name: Make Download
           command: cd openwrt && make -j"$(nproc)" download
