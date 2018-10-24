@@ -31,4 +31,4 @@ jobs:
           command: cd openwrt && make -j"$(nproc)" download
       - run:
           name: Build
-          command: cd openwrt && make -j"$(nproc)" --output-sync
+          command: cd openwrt && make -j"$(nproc)"
