@@ -9,11 +9,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Checkout Files
-          command: git https://git.openwrt.org/openwrt/openwrt.git/ 
-      - run:
           name: Install dependencies
           command: apt-get update && apt-get install -y subversion g++ zlib1g-dev build-essential git python rsync main-db libncurses5-dev gawk gettext unzip file libssl-dev wget zip time
+      - run:
+          name: Checkout Files
+          command: git https://git.openwrt.org/openwrt/openwrt.git/ 
       - run:
           name: Update script
           command: cd openwrt && ./scripts/feeds update -a
