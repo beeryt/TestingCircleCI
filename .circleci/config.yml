@@ -2,50 +2,30 @@ version: 2
 jobs:
   build:
     docker:
-      # - image: purplekarrot/arm-linux-gnueabihf
-      - image: rikorose/gcc-cmake:latest
+      - image: ubuntu
 
     working_directory: ~/repo
 
-    environment:
-      CC: gcc
-      CXX: g++
-
     steps:
       - checkout
-
+      - run:
+          name: Checkout Files
+          command: git https://git.openwrt.org/openwrt/openwrt.git/ 
       - run:
           name: Install dependencies
-          command: apt-get update && apt-get install -y file
-
+          command: apt-get update && apt-get install -y subversion g++ zlib1g-dev build-essential git python rsync main-db libncurses5-dev gawk gettext unzip file libssl-dev wget zip time
       - run:
-          name: gcc version
-          command: ${CC} --version
-
+          name: Update script
+          command: cd openwrt && ./scripts/feeds update -a
       - run:
-          name: g++ version
-          command: ${CXX} --version
-
+          name: Install script
+          command: cd openwrt && ./scripts/feeds install -a
       - run:
-          name: cmake version
-          command: cmake --version
-
+          name: Make Configuration
+          command: make menuconfig
       - run:
-          name: Run CMake
-          command: mkdir build && cd build && cmake .. && make help
-
+          name: Make Download
+          command: make -j"$(nproc)" download
       - run:
-          name: Build C
-          command: cd build && make C && file C.elf
-
-      - run:
-          name: Build C++
-          command: cd build && make C++ && file C++.elf
-
-      - store_artifacts:
-          path: ~/repo/build/C.elf
-          destination: C.elf
-
-      - store_artifacts:
-          path: ~/repo/build/C++.elf
-          destination: C++.elf
+          name: Build
+          command: make -j"$(nproc)"
